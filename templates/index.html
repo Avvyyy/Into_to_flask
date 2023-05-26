@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>python server</title>
+  <link href="{{url_for('static', filename='css/app.css')}}" rel="stylesheet">
+</head>
+<body>
+   
+        <!-- 
+      
+        We use jinja syntax(template) to pass data to the html from python
+        the first parameter to render_template is the template we sihe to render
+        and the second is the data to render to the template
+       -->
+      
+  
+    {% for todo in todos %}
+      <a href="/details/{{todo['id']}}">
+        <h1>{{todo['todo']}}</h1>
+      </a>
+    {% endfor %}
+</body>
+</html>
